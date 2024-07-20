@@ -1,0 +1,50 @@
+columns:
+  - PolicyID: int
+  - ClaimNb: int
+  - Exposure: float
+  - Power: category
+  - CarAge: int
+  - DriverAge: int
+  - Brand: category
+  - Gas: category
+  - Region: category
+  - Density: int
+  - ClaimAmount: float
+
+numerical_columns:
+  - PolicyID
+  - ClaimNb
+  - Exposure
+  - CarAge
+  - DriverAge
+  - Density
+  - ClaimAmount
+
+categorical_columns:
+  - Power
+  - Brand
+  - Gas
+  - Region
+
+drop_columns:
+  - PolicyID
+
+
+# for data transformation
+num_features:
+  - ClaimNb
+  - Exposure
+  - CarAge
+  - DriverAge
+  - Density
+  - ClaimAmount
+
+oh_columns:
+  - Power
+  - Brand
+  - Gas
+  - Region
+
+transform_columns:
+  - Density
+  - Exposure

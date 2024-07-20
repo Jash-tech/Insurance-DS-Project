@@ -22,8 +22,8 @@ class Ins_Data:
                 collection = self.mongodb_client[database_name][collection_name]
 
             df = pd.DataFrame(list(collection.find()))
-            if "PolicyID" in df.columns.to_list():
-                df = df.drop(columns=["PolicyID"], axis=1)
+            if "_id" in df.columns.to_list():
+                df = df.drop(columns=["_id"], axis=1)
             df.replace({"na":np.nan},inplace=True)
             return df
         except Exception as e:
